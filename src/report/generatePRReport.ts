@@ -8,13 +8,15 @@ export const generatePRReport = async (
     options: Options,
     repo: { owner: string; repo: string },
     pr: { number: number },
-    octokit: ReturnType<typeof getOctokit>
+    octokit: ReturnType<typeof getOctokit>,
+    dataCollector: any
 ) => {
     const previousReport = await fetchPreviousReport(
         octokit,
         repo,
         pr,
-        options
+        options,
+        dataCollector
     );
 
     if (previousReport) {

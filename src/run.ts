@@ -190,7 +190,8 @@ export const run = async (
                 options,
                 context.repo,
                 options.pullRequest as { number: number },
-                octokit
+                octokit,
+                dataCollector
             );
         } else {
             await generateCommitReport(
