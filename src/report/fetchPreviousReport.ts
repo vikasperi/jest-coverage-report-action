@@ -21,5 +21,11 @@ export async function fetchPreviousReport(
         comment.body?.includes(getReportTag(options))
     );
 
+    commentList.map((comment) => console.warn(comment.body));
+
+    console.warn(
+        getReportTag(options), previousReport.body
+    );
+
     return !previousReport ? null : previousReport;
 }
